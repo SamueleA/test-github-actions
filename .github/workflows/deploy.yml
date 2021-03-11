@@ -9,6 +9,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: build the site
         run: yarn && yarn build
+      - name: get list of files
+        run: ls
+      - name: get files in build
+        run: ls ./build
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
