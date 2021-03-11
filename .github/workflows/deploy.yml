@@ -3,16 +3,15 @@ on: [push]
 jobs:
   test-deploy:
     runs-on: ubuntu-latest
-    container: fleek/create-react-app
     name: A job to test the action-deploy action by deploying a test site
     steps:
       - uses: actions/checkout@v2
-      - name: build the site
-        run: yarn && yarn build
-      - name: get list of files
-        run: ls
-      - name: get files in build
-        run: ls ./build
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm publish
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
