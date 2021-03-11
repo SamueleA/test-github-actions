@@ -7,9 +7,8 @@ jobs:
     name: A job to test the action-deploy action by deploying a test site
     steps:
       - name: build the site
-        uses: ./
-        run: yarn && yarn build
       - uses: actions/checkout@v2
+        run: yarn && yarn build
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
