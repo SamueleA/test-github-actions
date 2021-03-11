@@ -7,6 +7,7 @@ jobs:
     name: A job to test the action-deploy action by deploying a test site
     steps:
       - name: build the site
+        uses: ./
         run: yarn && yarn build
       - uses: actions/checkout@v2
       - name: Deploy test site
