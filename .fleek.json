@@ -1,0 +1,14 @@
+{
+  "site": {
+    "id": "6e3fa29d-3685-4035-aa4a-38f452631a3e",
+    "team": "samuele-fleek2-team",
+    "platform": "ipfs",
+    "source": "ipfs",
+    "name": "autumn-feather-3023"
+  },
+  "build": {
+    "baseDir": "",
+    "publicDir": "build",
+    "rootDir": "/home/piraya/repos/test/test-github-actions"
+  }
+}
