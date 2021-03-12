@@ -6,12 +6,6 @@ jobs:
     name: A job to test the action-deploy action by deploying a test site
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm run build
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
