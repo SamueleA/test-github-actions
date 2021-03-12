@@ -3,9 +3,12 @@ on: [push]
 jobs:
   test-deploy:
     runs-on: ubuntu-latest
+    container: fleek/create-react-app
     name: A job to test the action-deploy action by deploying a test site
     steps:
       - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
