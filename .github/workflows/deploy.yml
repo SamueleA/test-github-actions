@@ -12,8 +12,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: npm run build
-      - run: ls
-      - run: ls ./build
       - name: Deploy test site
         id: deploy
         uses: fleekhq/action-deploy@master
@@ -21,5 +19,3 @@ jobs:
           apiKey: ${{ secrets.FLEEK_API_KEY }}
       - name: Get the output url
         run: echo "Deploy url is ${{ steps.deploy.outputs.deployUrl }}"
-      - run: ls
-      - run: ls ./build
